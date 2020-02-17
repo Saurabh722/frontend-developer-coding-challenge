@@ -1,0 +1,47 @@
+@import "./variables.scss";
+@import "./_mixins.scss";
+
+.btn-primary {
+    background-color: $primary-color;
+    border: 1px solid $primary-dark-color;
+
+    @include override-element-state-style {
+        background-color: $primary-dark-color;
+        border: 1px solid $primary-dark-color;
+    }
+}
+
+.btn-light:hover {
+    border: 1px solid $grey-medium;
+
+    .demi-link {
+        text-decoration: underline;
+    }
+}
+
+main {
+    background-color: $grey-medium;
+}
+
+form {
+    background-color: $white;
+    
+    .form-control {
+        box-shadow: none;
+        height: 42px;
+    }
+}
+
+.base-card {
+    background: $grey-light;
+}
+
+.demi-link {
+    color: $link-color;
+}
+
+.input-error {
+    color: $primary-error-color;
+    background-color: $primary-error-light-color;
+    border: 1px solid $primary-error-color;
+}

@@ -1,0 +1,125 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./app/scss/theme.scss"; 
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.mcafee {
+    main {
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__login-container {
+        color: #636363;
+        width: 450px;
+        padding: 15px;
+        border-radius: 3px;
+        border: 1px solid $white;
+        box-shadow: 3px 3px 3px $grey-dark;
+        margin: auto;
+
+        @include breakpoint-450px {
+            width: 100%;
+            padding: 10px;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        @include ie11-support {
+            position: relative;
+            top: 50vh;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__login-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &__logo {
+            width: 28%;
+            margin-right: 1em;
+
+            &:hover img {
+                filter: drop-shadow(2px 4px 6px $grey-dark);
+            }
+        }
+
+        &__title {
+            font-size: 1.6em;
+
+            @include breakpoint-450px {
+                font-size: 1.4em;
+            }
+
+            &:before {
+                content: "";
+                margin-right: 0.8em;
+                border-left: 1px solid;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__login-body {
+        .mcafee__login-body-panel {
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .mcafee__login-validation-message {
+            display: none;
+
+            ul {
+                padding-left: 15px;
+            }
+
+            &.mcafee__login-validation-message--show {
+                display: block;
+            }
+        }
+
+        form {
+            .form-group {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    left: 13px;
+                    top: 12px;
+                    font-size: 18px;
+                }
+
+                .form-control {
+                    padding: 6px 12px 6px 34px;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            &:invalid + .mcafee__login-body-panel {
+                display: block;
+            }
+        }
+    }
+
+    &__disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
