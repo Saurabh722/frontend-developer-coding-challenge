@@ -5,3 +5,7 @@
 3.	`run npm install`.
 4.	For dev: run `npm start`.
 5.	For Production build run `npm run build`.
+
+# Pending tasks
+1.	Accessibility testing.
+2.	Unit testing :(.
