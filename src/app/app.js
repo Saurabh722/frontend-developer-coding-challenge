@@ -5,17 +5,28 @@ import { login } from "./services/services";
 
 const form = document.querySelector("[data-js=login-form]");
 const submitBtn = document.querySelector("[data-js=submit-btn]");
+const alertInfo = document.querySelector(".alert");
+
+function showNotification(response) {
+  const className = response.error ? "alert-danger" : "alert-success";
+  alertInfo.classList.add(className);
+  alertInfo.innerHTML = response.error || "Logged in successful";
+
+  setTimeout(() => {
+    alertInfo.innerHTML = "";
+    alertInfo.classList.remove(className);
+    submitBtn.classList.remove("mcafee__disabled");
+  }, 1000)
+}
 
 const loginHandler = {
   success: (data) => {
-    console.log(data);
-    submitBtn.classList.remove("mcafee__disabled");
-    // TODO: show error view.
+    console.log("data", data);
+    showNotification(data);
   },
   error: (error) => {
     console.log(error);
     submitBtn.classList.remove("mcafee__disabled");
-    // TODO: show error view.
   }
 }
 
@@ -45,6 +56,7 @@ function init() {
 */
 if (!form) throw new Error("Could not find [data-js=login-form]");
 if (!submitBtn) throw new Error("Could not find [data-js=submit-btn]");
+if (!alertInfo) throw new Error("Could not find .alert");
 
 export {
   init

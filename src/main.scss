@@ -16,6 +16,19 @@ html {
         justify-content: space-between;
     }
 
+    .alert {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1;
+        display: none;
+
+        &.alert-success,
+        &.alert-danger {
+            display: block;
+        }
+    }
+
     &__login-container {
         color: #636363;
         width: 450px;
