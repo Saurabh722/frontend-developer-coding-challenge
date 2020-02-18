@@ -1,7 +1,7 @@
 {
   "name": "frontend-developer-coding-challenge",
   "version": "1.0.0",
-  "description": "1.\tLet’s talk about Webpack 2.\tSetting up Webpack 3.\tOrganizing Dependencies 4.\tConfiguring Basic Webpack 5.\tUnderstanding Loaders 6.\tCache Busting & Plugins 7.\tConfigure Webpack for Environments 8.\tMore on Loaders/Plugins 9.\tMultiple Entry Points 10.\tMinification & Extraction 11.\tES6 -> ES5 – Setup up Babel",
+  "description": "mcafee frontend developer coding challenge",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
